@@ -1,0 +1,63 @@
+version: '3.3'
+services:
+  db:
+    env_file: .env
+    image: ${DB_ENGINE}:${DB_IMAGE_VERSION}
+    restart: always
+    volumes:
+      - ./backend/db/db_data:/var/lib/mysql
+    environment: 
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${WORDPRESS_DB_NAME}
+      MYSQL_USER: ${WORDPRESS_DB_USER}
+      MYSQL_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+    networks:
+      - wpsite
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    env_file: .env
+    ports:
+      - '8082:80'
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    networks:
+      - wpsite
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    expose:
+      - '3000'
+    ports:
+      - 8080:3000
+    volumes:
+      - ./frontend:/var/www/app/frontend
+      - /var/www/app/frontend/node_modules
+      - /var/www/app/frontend/.next
+    user: node
+  wordpress:
+    depends_on:
+      - db
+    restart: always
+    image: wordpress:latest
+    ports:
+      - 8081:80
+    volumes:
+      - ./backend/wordpress/wp-content:/var/www/html/wp-content
+      - ./backend/config/.htaccess:/var/www/html/.htaccess
+    env_file: .env
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+      WORDPRESS_CONFIG_EXTRA:
+        define('WP_ALLOW_REPAIR', true );
+        define('WP_HOME','${WORDPRESS_URL}');
+        define('WP_SITEURL','${WORDPRESS_URL}');
+    networks:
+      - wpsite
+networks:
+  wpsite:

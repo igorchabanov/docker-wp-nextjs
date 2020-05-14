@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/wp-content/themes/kabbala/static/css/main.ecb45a0a.chunk.css",
+    "main.js": "/wp-content/themes/kabbala/static/js/main.e8390c29.chunk.js",
+    "main.js.map": "/wp-content/themes/kabbala/static/js/main.e8390c29.chunk.js.map",
+    "runtime-main.js": "/wp-content/themes/kabbala/static/js/runtime-main.b10a617d.js",
+    "runtime-main.js.map": "/wp-content/themes/kabbala/static/js/runtime-main.b10a617d.js.map",
+    "static/css/2.f0a0ee9f.chunk.css": "/wp-content/themes/kabbala/static/css/2.f0a0ee9f.chunk.css",
+    "static/js/2.3d34a6b6.chunk.js": "/wp-content/themes/kabbala/static/js/2.3d34a6b6.chunk.js",
+    "static/js/2.3d34a6b6.chunk.js.map": "/wp-content/themes/kabbala/static/js/2.3d34a6b6.chunk.js.map",
+    "index.html": "/wp-content/themes/kabbala/index.html",
+    "precache-manifest.070dd0c28e6306dc68df963e3a0afa1a.js": "/wp-content/themes/kabbala/precache-manifest.070dd0c28e6306dc68df963e3a0afa1a.js",
+    "service-worker.js": "/wp-content/themes/kabbala/service-worker.js",
+    "static/css/2.f0a0ee9f.chunk.css.map": "/wp-content/themes/kabbala/static/css/2.f0a0ee9f.chunk.css.map",
+    "static/css/main.ecb45a0a.chunk.css.map": "/wp-content/themes/kabbala/static/css/main.ecb45a0a.chunk.css.map",
+    "static/js/2.3d34a6b6.chunk.js.LICENSE": "/wp-content/themes/kabbala/static/js/2.3d34a6b6.chunk.js.LICENSE",
+    "static/media/main.css": "/wp-content/themes/kabbala/static/media/ul-arrow.cb4d0e4a.svg",
+    "static/media/event-date-icon.svg": "/wp-content/themes/kabbala/static/media/event-date-icon.dbd1a933.svg",
+    "static/media/news-image.jpg": "/wp-content/themes/kabbala/static/media/news-image.eb78d7eb.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b10a617d.js",
+    "static/css/2.f0a0ee9f.chunk.css",
+    "static/js/2.3d34a6b6.chunk.js",
+    "static/css/main.ecb45a0a.chunk.css",
+    "static/js/main.e8390c29.chunk.js"
+  ]
+}
